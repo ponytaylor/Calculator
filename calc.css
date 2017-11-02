@@ -1,0 +1,80 @@
+
+h1 {
+    text-align: center;
+}
+ 
+.calculator {
+   display: flex;
+ flex-direction: row;
+  justify-content: flex-start;
+   background-color: yellow;
+  
+}
+.calculatorLeft{
+ display: flex;
+ align-items: center;
+  background-color: blue;
+ justify-content: center;
+  width: 220px;
+  margin: 0px 0px 0px auto;
+  flex-flow: column nowrap; 
+}
+
+.calculatorRight{
+ display: flex;
+ align-items: center;
+  background-color: orange;
+ justify-content: center;
+   width: 70px;
+  margin: 0px auto 0px 0px;
+  flex-flow: column nowrap; 
+}
+.flexContainer {
+    border: 1px solid firebrick;
+    
+    display: flex; /* divs will stack by default, this makes them in a row */
+    flex-flow: row nowrap; /* set both direction and wrap in one line */
+   /*justify-content: space-between; /* flex-end, flex-center, space-around, space-between */
+    align-items: flex-start; 
+  /*margin: 10px ;/*vertical alignments not the space ones but baseline*/
+    /* align-content: flex-start;  for multiline content */
+ 
+}
+ 
+.flexItem {
+  display: flex;
+    border: 1px solid teal;
+  border-radius: 10px;
+    background-color: lawngreen;
+    height: 50px;
+    width: 50px;
+    order: 0; /* can be negative*/
+ justify-content: center;
+  align-items: center;
+   margin: 10px;
+    
+}
+
+.opsItem {
+    background-color: lightgreen;
+   
+    justify-content: space-around;
+   margin: 5px;
+    height: 40px;
+    width: 50px;
+    
+}
+.operations {
+  flex-direction: column;
+}
+.clearbutton {
+ /*margin-bottom: 30px;
+  */
+}
+.calcDisplay{
+  height: 40px;
+  margin-top: 10px;
+  font-family: "Courier";
+  maxlength: "15";
+  text-align: right;
+}
