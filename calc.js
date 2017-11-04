@@ -38,6 +38,11 @@ function doTheWork(arrOps) {
 
     return retVal;
 }
+function showSteps(stepArr){
+    var retStr = ""; 
+    retStr = stepArr.join(" ");
+    return retStr;  
+}
 
 function setUpListeners() {
     let calcDisplay = document.getElementById("calcDisplay");
@@ -65,7 +70,7 @@ function setUpListeners() {
                 calculateSteps.push(this.value);
                 console.log(calculateSteps);
                 calcDisplay.classList.add('reset');
-                stepsDisplay.innerHTML += " " + this.value + " ";
+                stepsDisplay.innerHTML = showSteps(calculateSteps);
             }
             else{
                 console.log(this.value + " " + calcDisplay.value)
@@ -76,7 +81,7 @@ function setUpListeners() {
                 else {
                     calcDisplay.value = calcDisplay.value + this.value;
                 }
-                stepsDisplay.innerHTML += this.value;
+               
             }
             //alert(this.value); 
         });
