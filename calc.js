@@ -14,17 +14,20 @@ function doTheWork(arrOps) {
             if (op != ''){
                 switch(op){
                     case '+':
-                    retVal = retVal + Number(elem);
-                    break; 
+                        retVal = retVal + Number(elem);
+                        break; 
                     case '-':
-                    retVal = retVal - Number(elem);
-                    break; 
+                        retVal = retVal - Number(elem);
+                        break; 
                     case '/':
-                    retVal = retVal / Number(elem);
-                    break; 
+                        retVal = retVal / Number(elem);
+                        break; 
                     case '*':
-                    retVal = retVal * Number(elem);
-                    break; 
+                        retVal = retVal * Number(elem);
+                        break;
+                    default:
+                        // not created by button
+                        break;      
                 }
                 op = '';
             }
@@ -35,19 +38,24 @@ function doTheWork(arrOps) {
 
     return retVal;
 }
+
 function setUpListeners() {
     let calcDisplay = document.getElementById("calcDisplay");
+    let stepsDisplay = document.getElementById("stepsDisplay");
     let calculateSteps = [];
     var btns = document.getElementsByTagName("button");
+    calcDisplay.value = "0";
     console.log(btns);
     for (var i = 0; i < btns.length; i++) {
         btns[i].addEventListener("click", function() {
             if (this.classList.contains('clearbutton')){
                 calcDisplay.value = "0";
                 calcDisplay.classList.add('reset');
+                stepsDisplay.innerHTML = "";
             }
             else if (this.id == 'equals'){
                 calculateSteps.push(calcDisplay.value);
+                stepsDisplay.innerHTML ="";
                 calcDisplay.value = doTheWork(calculateSteps);
                 calcDisplay.classList.add('reset');
             }
@@ -57,6 +65,7 @@ function setUpListeners() {
                 calculateSteps.push(this.value);
                 console.log(calculateSteps);
                 calcDisplay.classList.add('reset');
+                stepsDisplay.innerHTML += " " + this.value + " ";
             }
             else{
                 console.log(this.value + " " + calcDisplay.value)
@@ -67,6 +76,7 @@ function setUpListeners() {
                 else {
                     calcDisplay.value = calcDisplay.value + this.value;
                 }
+                stepsDisplay.innerHTML += this.value;
             }
             //alert(this.value); 
         });

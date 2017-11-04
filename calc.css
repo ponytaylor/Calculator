@@ -5,16 +5,43 @@ h1 {
  
 .calculator {
    display: flex;
- flex-direction: row;
-  justify-content: flex-start;
-   background-color: yellow;
-  
+ flex-direction: column;
+  justify-content: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+  width: 300px;
+  margin: auto; 
+ background-color: yellow;
+}
+
+.calculatorDisplay {
+  display: flex;
+flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ border-top-left-radius: 10px;
+ border-top-right-radius: 10px;
+ padding: 10px 0px;
+ background-color: #805533;
+}
+.lowerCalculator {
+  display: flex;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+/*flex-flow: row nowrap;*/
+/* justify-content: flex-start;*/
+ align-items: center;
+  /* margin: 0px 0px 0px auto;*/
+background-color: #805533;
 }
 .calculatorLeft{
  display: flex;
- align-items: center;
-  background-color: blue;
- justify-content: center;
+ border-bottom-left-radius: 10px;
+ 
+
+  background-color: #805533;
+ justify-content: flex-start;
   width: 220px;
   margin: 0px 0px 0px auto;
   flex-flow: column nowrap; 
@@ -23,29 +50,25 @@ h1 {
 .calculatorRight{
  display: flex;
  align-items: center;
-  background-color: orange;
+ border-bottom-right-radius: 10px;
+
+  background-color: #BD8260;
  justify-content: center;
    width: 70px;
-  margin: 0px auto 0px 0px;
-  flex-flow: column nowrap; 
+  /*margin: 0px auto 0px 0px;*/
+ flex-flow: column nowrap; 
 }
 .flexContainer {
-    border: 1px solid firebrick;
-    
     display: flex; /* divs will stack by default, this makes them in a row */
     flex-flow: row nowrap; /* set both direction and wrap in one line */
-   /*justify-content: space-between; /* flex-end, flex-center, space-around, space-between */
     align-items: flex-start; 
-  /*margin: 10px ;/*vertical alignments not the space ones but baseline*/
-    /* align-content: flex-start;  for multiline content */
- 
 }
  
 .flexItem {
   display: flex;
-    border: 1px solid teal;
+
   border-radius: 10px;
-    background-color: lawngreen;
+    background-color: tan;
     height: 50px;
     width: 50px;
     order: 0; /* can be negative*/
@@ -56,10 +79,13 @@ h1 {
 }
 
 .opsItem {
-    background-color: lightgreen;
-   
+    background-color: black;
+   color: white;
+   font-weight: bold;
     justify-content: space-around;
-   margin: 5px;
+   margin: 5x 10px;
+   border: none;
+   font-size: 20px;
     height: 40px;
     width: 50px;
     
@@ -68,13 +94,27 @@ h1 {
   flex-direction: column;
 }
 .clearbutton {
- /*margin-bottom: 30px;
-  */
+ background-color: white;
+  
 }
 .calcDisplay{
-  height: 40px;
+  height: 30px;
   margin-top: 10px;
   font-family: "Courier";
-  maxlength: "15";
+  font-weight: bold;
+  max-width: 15;
+  background-color: lightgray;
+  border-radius: 5px;
   text-align: right;
+  padding: 5px;
+}
+
+.stepsDisplay{
+  height: 15px;
+  margin-top: 3px;
+  font-family: "Courier";
+  background-color: darkgrey;
+  border-radius: 5px;
+  text-align: right;
+  padding: 3px;
 }
