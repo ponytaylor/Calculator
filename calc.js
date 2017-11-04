@@ -57,12 +57,14 @@ function setUpListeners() {
                 calcDisplay.value = "0";
                 calcDisplay.classList.add('reset');
                 stepsDisplay.innerHTML = "";
+                calculateSteps = [];
             }
             else if (this.id == 'equals'){
                 calculateSteps.push(calcDisplay.value);
                 stepsDisplay.innerHTML ="";
                 calcDisplay.value = doTheWork(calculateSteps);
                 calcDisplay.classList.add('reset');
+                calculateSteps = [];
             }
             else if (this.classList.contains('opsItem')){
                 // add operation
